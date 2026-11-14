@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Indeks Kepuasan Orang Tua/Wali – MIN 2 Buton Tengah</title>
+<style>
+:root{--navy:#12345a;--blue:#1d5d91;--gold:#e4ad43;--bg:#f3f6fa;--ink:#203044;--muted:#66788a;--line:#dce4ec;--white:#fff;--green:#18794e}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.55 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+header{background:linear-gradient(120deg,#102d50,#1d6592);color:white;padding:28px 18px 34px}
+.wrap{max-width:1050px;margin:auto;padding:0 16px}
+.brand{display:flex;align-items:center;gap:12px}.logo{width:48px;height:48px;border-radius:14px;background:#ffffff20;display:grid;place-items:center;font-size:25px}
+h1{font-size:clamp(23px,4vw,34px);line-height:1.2;margin:10px 0 8px}header p{margin:0;color:#e3edf6;max-width:720px}
+nav{display:flex;gap:8px;flex-wrap:wrap;margin-top:20px}.tab{border:1px solid #ffffff70;background:#ffffff12;color:white;padding:9px 14px;border-radius:10px;cursor:pointer;font-weight:650}.tab.active{background:white;color:var(--navy)}
+main{padding:24px 0 50px}.panel{background:white;border:1px solid var(--line);border-radius:16px;padding:22px;margin-bottom:16px;box-shadow:0 5px 20px #16324a08}
+h2{font-size:20px;margin:0 0 8px;color:var(--navy)}h3{font-size:16px;margin:0 0 12px;color:var(--navy)}
+.muted,.hint{color:var(--muted);font-size:13px}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+label.field{display:block;font-weight:650;font-size:14px}input,select,textarea{width:100%;padding:11px 12px;border:1px solid #cbd6e1;border-radius:9px;margin-top:6px;font:inherit;background:white;color:var(--ink)}
+textarea{min-height:90px;resize:vertical}.required{color:#b42318}.section{padding:18px 0;border-top:1px solid var(--line)}.section:first-of-type{border-top:0}
+.question{padding:13px 0;border-bottom:1px solid #edf1f5}.question:last-child{border-bottom:0}.qtext{font-weight:600;margin-bottom:9px}
+.scale{display:flex;gap:8px;flex-wrap:wrap}.scale label{display:flex;align-items:center;gap:5px;border:1px solid var(--line);border-radius:9px;padding:7px 10px;font-size:13px;cursor:pointer}.scale input{width:auto;margin:0;accent-color:var(--blue)}
+.btn{border:0;border-radius:10px;padding:11px 17px;background:var(--blue);color:white;font-weight:700;cursor:pointer}.btn.secondary{background:#eaf1f7;color:var(--navy)}.btn.danger{background:#a83232}.actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:16px}
+.notice{background:#eef6fc;border-left:4px solid var(--blue);padding:12px 14px;border-radius:8px;font-size:13px}.hidden{display:none!important}
+.statgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.stat{background:#f4f8fb;border-radius:12px;padding:16px}.stat strong{display:block;font-size:27px;color:var(--navy)}
+table{width:100%;border-collapse:collapse;font-size:14px}th,td{text-align:left;padding:10px;border-bottom:1px solid var(--line)}th{background:#f4f7fa;color:var(--navy)}
+.pill{display:inline-block;padding:3px 8px;border-radius:20px;background:#e8f5ee;color:var(--green);font-size:12px;font-weight:700}
+footer{text-align:center;color:var(--muted);font-size:12px;padding:10px 16px 30px}
+@media(max-width:650px){.grid,.statgrid{grid-template-columns:1fr}.panel{padding:16px}.scale{gap:5px}.scale label{padding:6px 8px}}
+@media print{header,nav,.actions,.no-print,footer{display:none!important}body{background:white}.panel{box-shadow:none;border:0;padding:0}.wrap{max-width:none;padding:0}}
+</style>
+</head>
+<body>
+<header>
+ <div class="wrap">
+  <div class="brand"><div class="logo">🏫</div><div><b id="schoolHeading">MIN 2 BUTON TENGAH</b><div style="font-size:12px;color:#d7e6f3">Indeks Kepuasan Orang Tua/Wali Peserta Didik</div></div></div>
+  <h1>Suara Orang Tua, Mutu Madrasah Lebih Baik</h1>
+  <p>Silakan isi penilaian secara jujur sesuai pengalaman. Masukan Anda menjadi bahan evaluasi dan peningkatan mutu layanan madrasah.</p>
+  <nav class="no-print">
+   <button class="tab active" data-tab="survey">Isi Survei</button>
+   <button class="tab" data-tab="dashboard">Rekap Hasil</button>
+   <button class="tab" data-tab="settings">Pengaturan</button>
+  </nav>
+ </div>
+</header>
+<main class="wrap">
+<section id="survey">
+ <form id="surveyForm">
+  <div class="panel">
+   <h2>Petunjuk Pengisian</h2>
+   <p class="muted">Pilih satu jawaban pada setiap pernyataan. Tidak ada jawaban benar atau salah. Pengisian identitas orang tua bersifat opsional.</p>
+   <div class="notice"><b>Skala penilaian:</b> 1 = Tidak Puas · 2 = Kurang Puas · 3 = Puas · 4 = Sangat Puas · N/A = Tidak tahu/tidak mengalami.</div>
+  </div>
+  <div class="panel">
+   <h2>A. Identitas Responden</h2><p class="muted">Data identitas tidak wajib diisi. Hindari menuliskan informasi pribadi yang tidak diperlukan.</p>
+   <div class="grid">
+    <label class="field">Nama orang tua/wali (opsional)<input name="respondent" placeholder="Boleh dikosongkan"></label>
+    <label class="field">Hubungan dengan peserta didik<select name="relation"><option value="">Pilih</option><option>Ayah</option><option>Ibu</option><option>Wali</option></select></label>
+    <label class="field">Kelas peserta didik<select name="grade"><option value="">Pilih kelas</option><option>RA/TK</option><option>I</option><option>II</option><option>III</option><option>IV</option><option>V</option><option>VI</option><option>VII</option><option>VIII</option><option>IX</option><option>X</option><option>XI</option><option>XII</option></select></label>
+    <label class="field">Tahun ajaran<select name="year"><option>2026/2027</option><option>2027/2028</option><option>2025/2026</option></select></label>
+   </div>
+  </div>
+  <div class="panel" id="questionnaire"><h2>B. Penilaian Layanan Madrasah</h2><p class="muted">Semua pernyataan dinilai dengan skala 1–4 atau N/A.</p></div>
+  <div class="panel">
+   <h2>C. Saran dan Masukan</h2>
+   <label class="field">1. Hal yang sudah baik dari madrasah<textarea name="positive" placeholder="Tuliskan hal positif yang Anda rasakan..."></textarea></label><br>
+   <label class="field">2. Hal yang perlu diperbaiki<textarea name="improve" placeholder="Tuliskan saran perbaikan..."></textarea></label><br>
+   <label class="field">3. Saran atau harapan lainnya<textarea name="hope" placeholder="Masukan tambahan (opsional)..."></textarea></label>
+  </div>
+  <div class="panel">
+   <label style="display:flex;gap:10px;align-items:flex-start"><input type="checkbox" id="consent" required style="width:auto;margin:4px 0 0"><span>Saya mengisi survei ini dengan sukarela dan memberikan jawaban sesuai pengalaman. Saya memahami bahwa hasil digunakan untuk evaluasi layanan madrasah.</span></label>
+   <div class="actions"><button class="btn" type="submit">Kirim Penilaian</button><button class="btn secondary" type="reset">Bersihkan Isian</button></div>
+   <p class="hint">Penyimpanan pada versi ini berada di browser/perangkat yang digunakan, bukan server madrasah.</p>
+  </div>
+ </form>
+</section>
+<section id="dashboard" class="hidden">
+ <div class="panel">
+  <h2>Dashboard Rekap Kepuasan</h2><p class="muted">Rekap lokal dari respons yang tersimpan pada browser ini.</p>
+  <div class="statgrid"><div class="stat"><span class="muted">Jumlah responden</span><strong id="total">0</strong></div><div class="stat"><span class="muted">Indeks kepuasan</span><strong id="index">–</strong></div><div class="stat"><span class="muted">Kategori</span><strong id="category" style="font-size:18px">Belum ada data</strong></div></div>
+ </div>
+ <div class="panel"><h3>Nilai per Aspek</h3><div id="aspectTable" class="muted">Belum ada data.</div></div>
+ <div class="panel"><h3>Riwayat Masukan Responden</h3><div id="responseTable" class="muted">Belum ada data.</div><div class="actions no-print"><button class="btn" id="export">Unduh CSV</button><button class="btn secondary" onclick="window.print()">Cetak Rekap</button><button class="btn danger" id="clearData">Hapus seluruh data lokal</button></div></div>
+</section>
+<section id="settings" class="hidden">
+ <div class="panel"><h2>Pengaturan Madrasah</h2><p class="muted">Ubah nama lembaga yang tampil pada bagian atas survei.</p>
+ <label class="field">Nama madrasah<input id="schoolName" value="MIN 2 BUTON TENGAH"></label>
+ <label class="field">Tahun ajaran aktif<input id="activeYear" value="2026/2027"></label>
+ <div class="actions"><button class="btn" id="saveSettings">Simpan Pengaturan</button></div>
+ </div>
+ <div class="panel"><h3>Catatan Pengelolaan Data</h3><ul><li>Data tersimpan di browser/perangkat yang digunakan untuk mengisi.</li><li>Gunakan tombol Unduh CSV untuk membuat salinan rekap.</li><li>Data tidak otomatis terkirim ke kepala madrasah atau perangkat lain.</li><li>Untuk survei daring bersama, diperlukan hosting dan basis data/server dengan pengaturan akses admin.</li></ul></div>
+</section>
+</main>
+<footer>Instrumen evaluasi layanan pendidikan · Indeks Kepuasan Orang Tua/Wali · Versi 1.0</footer>
+<script>
+const groups=[
+["D. Kompetensi dan Pembelajaran",[
+"Guru menguasai materi pelajaran dan menyampaikannya dengan jelas.",
+"Guru menggunakan metode pembelajaran yang menarik dan sesuai kebutuhan peserta didik.",
+"Guru memberikan penilaian secara adil dan transparan.",
+"Madrasah mendukung pembentukan karakter, akhlak, dan kebiasaan ibadah peserta didik.",
+"Madrasah memberikan perhatian terhadap perkembangan akademik dan nonakademik peserta didik."
+]],
+["E. Sikap dan Layanan Pendidik/Tenaga Kependidikan",[
+"Guru dan tenaga kependidikan bersikap ramah, sopan, dan menghargai orang tua.",
+"Guru mudah dihubungi ketika orang tua membutuhkan informasi tentang anak.",
+"Keluhan atau pertanyaan orang tua ditanggapi dengan baik dan tepat waktu.",
+"Peserta didik diperlakukan secara adil tanpa diskriminasi."
+]],
+["F. Komunikasi dan Kemitraan dengan Orang Tua",[
+"Informasi kegiatan dan kebijakan madrasah disampaikan dengan jelas.",
+"Madrasah melibatkan orang tua dalam kegiatan pendidikan sesuai kebutuhan.",
+"Madrasah menyampaikan perkembangan belajar dan perilaku peserta didik secara berkala.",
+"Saluran komunikasi (wali kelas, grup resmi, surat, atau media lainnya) berjalan efektif."
+]],
+["G. Sarana, Prasarana, dan Lingkungan",[
+"Ruang kelas dan lingkungan belajar bersih serta nyaman.",
+"Toilet, tempat ibadah, dan fasilitas umum terawat dengan baik.",
+"Fasilitas pembelajaran mendukung kegiatan belajar peserta didik.",
+"Madrasah memiliki lingkungan yang aman, tertib, dan ramah anak."
+]],
+["H. Tata Kelola dan Administrasi",[
+"Pelayanan administrasi (surat, data siswa, dan dokumen) mudah dan tertib.",
+"Prosedur layanan dan persyaratan administrasi disampaikan secara jelas.",
+"Pengelolaan biaya pendidikan/iuran dijelaskan secara terbuka sesuai ketentuan.",
+"Madrasah menjalankan aturan dan kebijakan secara konsisten dan adil."
+]],
+["I. Kepuasan Umum dan Kepercayaan",[
+"Saya merasa puas terhadap layanan pendidikan madrasah secara keseluruhan.",
+"Saya percaya madrasah berupaya memberikan pendidikan yang bermutu.",
+"Saya bersedia merekomendasikan madrasah ini kepada keluarga/orang lain.",
+"Madrasah menunjukkan kemauan untuk menerima kritik dan melakukan perbaikan."
+]]
+];
+const qroot=document.getElementById('questionnaire');let qIndex=0;
+groups.forEach(([title,questions])=>{const sec=document.createElement('div');sec.className='section';const h=document.createElement('h3');h.textContent=title;sec.append(h);questions.forEach(q=>{qIndex++;const id='q'+qIndex;const wrap=document.createElement('div');wrap.className='question';const t=document.createElement('div');t.className='qtext';t.textContent=qIndex+'. '+q;wrap.append(t);const scale=document.createElement('div');scale.className='scale';[['1','1 · Tidak Puas'],['2','2 · Kurang Puas'],['3','3 · Puas'],['4','4 · Sangat Puas'],['NA','N/A']].forEach(([v,l])=>{const lab=document.createElement('label');const inp=document.createElement('input');inp.type='radio';inp.name=id;inp.value=v;inp.required=true;lab.append(inp,document.createTextNode(l));scale.append(lab)});wrap.append(scale);sec.append(wrap)});qroot.append(sec)});
+const KEY='ikm_orangtua_madrasah_v1',SET='ikm_madrasah_settings';
+const read=()=>JSON.parse(localStorage.getItem(KEY)||'[]');const save=x=>localStorage.setItem(KEY,JSON.stringify(x));
+document.querySelectorAll('.tab').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('.tab').forEach(x=>x.classList.toggle('active',x===b));['survey','dashboard','settings'].forEach(id=>document.getElementById(id).classList.toggle('hidden',id!==b.dataset.tab));if(b.dataset.tab==='dashboard')render()}));
+document.getElementById('surveyForm').addEventListener('submit',e=>{e.preventDefault();if(!e.target.reportValidity())return;const fd=new FormData(e.target),answers={};for(let i=1;i<=qIndex;i++)answers['q'+i]=fd.get('q'+i);const record={date:new Date().toISOString(),respondent:fd.get('respondent'),relation:fd.get('relation'),grade:fd.get('grade'),year:fd.get('year'),answers,positive:fd.get('positive'),improve:fd.get('improve'),hope:fd.get('hope')};const data=read();data.push(record);save(data);e.target.reset();alert('Terima kasih. Penilaian Anda berhasil disimpan pada perangkat ini.');window.scrollTo({top:0,behavior:'smooth'})});
+function render(){const data=read();document.getElementById('total').textContent=data.length;if(!data.length){document.getElementById('index').textContent='–';document.getElementById('category').textContent='Belum ada data';document.getElementById('aspectTable').textContent='Belum ada data.';document.getElementById('responseTable').textContent='Belum ada data.';return}
+let all=[],rows=[];let offset=0;groups.forEach(([name,qs])=>{let vals=[];for(let j=0;j<qs.length;j++){const key='q'+(offset+j+1);data.forEach(r=>{const v=Number(r.answers[key]);if(Number.isFinite(v)&&v>=1&&v<=4)vals.push(v)})}offset+=qs.length;const avg=vals.length?vals.reduce((a,b)=>a+b,0)/vals.length:0;if(vals.length){all.push(...vals);rows.push({name,avg,n:vals.length})}});
+const avg=all.length?all.reduce((a,b)=>a+b,0)/all.length:0,index=avg/4*100;document.getElementById('index').textContent=index.toFixed(2);document.getElementById('category').textContent=index>=88.76?'Sangat Baik':index>=76.61?'Baik':index>=65?'Kurang Baik':'Tidak Baik';
+document.getElementById('aspectTable').innerHTML='<table><thead><tr><th>Aspek</th><th>Rata-rata (1–4)</th><th>Indeks (%)</th></tr></thead><tbody>'+rows.map(r=>`<tr><td>${esc(r.name)}</td><td>${r.avg.toFixed(2)}</td><td>${(r.avg/4*100).toFixed(2)}%</td></tr>`).join('')+'</tbody></table><p class="hint">Indeks keseluruhan = rata-rata skor valid ÷ 4 × 100. N/A tidak dihitung. Kategori ringkas: ≥88,76 sangat baik; 76,61–88,75 baik; 65–76,60 kurang baik; &lt;65 tidak baik.</p>';
+document.getElementById('responseTable').innerHTML='<table><thead><tr><th>Tanggal</th><th>Kelas</th><th>Hal baik</th><th>Perlu diperbaiki</th></tr></thead><tbody>'+data.slice().reverse().map(r=>`<tr><td>${new Date(r.date).toLocaleDateString('id-ID')}</td><td>${esc(r.grade||'-')}</td><td>${esc(r.positive||'-')}</td><td>${esc(r.improve||'-')}</td></tr>`).join('')+'</tbody></table>'}
+function esc(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+document.getElementById('export').addEventListener('click',()=>{const d=read();if(!d.length){alert('Belum ada data untuk diunduh.');return}const headers=['Tanggal','Nama (opsional)','Hubungan','Kelas','Tahun Ajaran',...Array.from({length:qIndex},(_,i)=>'P'+(i+1)),'Hal baik','Perlu diperbaiki','Harapan'];const rows=d.map(r=>[r.date,r.respondent,r.relation,r.grade,r.year,...Array.from({length:qIndex},(_,i)=>r.answers['q'+(i+1)]),r.positive,r.improve,r.hope]);const csv=[headers,...rows].map(row=>row.map(v=>'"'+String(v??'').replace(/"/g,'""')+'"').join(';')).join('\r\n');const blob=new Blob(['\ufeff'+csv],{type:'text/csv;charset=utf-8;'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='rekap-kepuasan-orang-tua.csv';a.click();URL.revokeObjectURL(a.href)});
+document.getElementById('clearData').addEventListener('click',()=>{if(confirm('Yakin ingin menghapus seluruh respons yang tersimpan di browser ini? Tindakan tidak dapat dibatalkan.')){localStorage.removeItem(KEY);render()}});
+function loadSettings(){const s=JSON.parse(localStorage.getItem(SET)||'{}');if(s.name){document.getElementById('schoolName').value=s.name;document.getElementById('schoolHeading').textContent=s.name.toUpperCase()}if(s.year){document.getElementById('activeYear').value=s.year;document.querySelector('[name=year]').value=s.year}}
+document.getElementById('saveSettings').addEventListener('click',()=>{const s={name:document.getElementById('schoolName').value.trim()||'MIN 2 BUTON TENGAH',year:document.getElementById('activeYear').value.trim()||'2026/2027'};localStorage.setItem(SET,JSON.stringify(s));document.getElementById('schoolHeading').textContent=s.name.toUpperCase();document.querySelector('[name=year]').value=s.year;alert('Pengaturan disimpan.')});loadSettings();
+</script>
+</body></html>
